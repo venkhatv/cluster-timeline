@@ -1,0 +1,11 @@
+#header {
+  font-size: 25px;
+}
+
+#navbar {
+  margin: 10px;
+  & a {
+    color:red;
+    margin-left: 20px;
+  }
+}
