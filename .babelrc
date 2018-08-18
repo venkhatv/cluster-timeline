@@ -1,0 +1,85 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "stage-0"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "style": true,
+            "libraryDirectory": "es"
+          }
+        ],
+        "syntax-dynamic-import",
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ],
+        [
+          "react-intl",
+          {
+            "messagesDir": "./assets/messages",
+            "enforceDescriptions": false
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "style": true,
+            "libraryDirectory": "es"
+          }
+        ],
+        "syntax-dynamic-import",
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ],
+        [
+          "react-intl",
+          {
+            "messagesDir": "./assets/messages",
+            "enforceDescriptions": false
+          }
+        ]
+      ]
+    },
+    "test": {
+      "plugins": [
+        "syntax-dynamic-import",
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ]
+    }
+  }
+}

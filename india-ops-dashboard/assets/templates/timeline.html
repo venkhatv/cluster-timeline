@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="dist/css/timeline.min.css" rel="stylesheet" />
+  <!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <title>Cluster Timeline</title>
+</head>
+
+<body>
+    <style>
+        
+    </style>
+  <div id="app-root1"></div>
+  <div class="timeline" data-mode="horizontal"  visible-items="4" data-horizontal-start-position="top">
+    <div class="timeline__wrap">
+      <div class="timeline__items">
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 1
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 2
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 3
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 4
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 5
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 6
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 7
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 8
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 9
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Content 10
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Your content / markup
+            <
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__content">
+            Your content / markup
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="src/js/timeline.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // =========
+      // APP STATE
+      // =========
+      // Setup our application state object
+      var appState = {
+        something: '',
+        phase: 'start' // possible values: started, something, ended
+      }
+      // =========
+      // EVENT MANAGEMENT
+      // =========
+      // Add an on click listener to all elements that have the class 'something'
+      $('.something').on('click', function () {
+        var buttonValue = this.value;
+        handleSomething(buttonValue);
+      });
+      // =========
+      // APP LOGIC
+      // =========
+      // Use a function to initialize our calculator.
+      function initializeApp() {
+        // reset the appState values
+        appState.something = ''
+        appState.phase = 'start'
+        // clear the display
+        refreshDisplay();
+      }
+      // Do something
+      function handleSomething() {
+        if (appState.phase === 'something') return; // if calculated, do nothing
+        // update appState phase
+        appState.phase = 'something';
+        // update the screen
+        refreshDisplay();
+      }
+      // =========
+      // APP DISPLAY
+      // =========
+      // Function that pushes appState to the display
+      function refreshDisplay() {
+        console.log(appState);
+        debugger
+        // timeline(document.querySelectorAll('.timeline'));
+        $('.timeline').timeline({
+            mode: 'horizontal',
+            visibleItems:8,
+        });
+      }
+      // =========
+      // INITIALIZE APP
+      // =========
+      initializeApp();
+    }); // closing $(document).ready()
+  </script>
+
+</body>
+
+</html>
