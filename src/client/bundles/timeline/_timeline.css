@@ -1,0 +1,5 @@
+.timeline{
+    & .timeline-chart{
+        background: #f4f5f6;
+    }
+}

@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import AppStore from './redux/appStore';
 
-import Home from './components/home';
+import Timeline from './bundles/timeline';
 import Contact from './components/contactus';
 import Notfound from './components/notfound';
 
@@ -13,7 +13,7 @@ const routes = [
     id: 1,
     path: '/',
     exact: true,
-    component: Home,
+    component: Timeline,
   },
   {
     id: 2,
