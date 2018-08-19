@@ -5,6 +5,9 @@ import path from 'path';
 import webpack from 'webpack';
 import es6Renderer from 'express-es6-template-engine';
 import webpackConfig from '../../webpack.config';
+import db from './dbmodels';
+import mountRoutes from './mountRoutes';
+import routes from './routes';
 
 const expressApp = express();
 const expressPort = process.env.PORT || 3000;
@@ -21,11 +24,16 @@ if (env === 'development') {
 
   expressApp.use(hotMiddleware(compiler));
 }
-
 expressApp.engine('html', es6Renderer);
 expressApp.set('views', path.join(process.cwd(), 'dist'));
 expressApp.set('view engine', 'html');
 expressApp.use(express.static(path.join(process.cwd(), 'dist')));
+
+expressApp.get('/', (request, response) => {
+  response.render('index');
+});
+
+expressApp.use('/api', mountRoutes(routes));
 
 expressApp.use('/timeline', (request, response) => {
   response.render('timeline');

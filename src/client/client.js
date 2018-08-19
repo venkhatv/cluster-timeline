@@ -1,6 +1,9 @@
 import React from 'react';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import AppStore from './redux/appStore';
+
 import Home from './components/home';
 import Contact from './components/contactus';
 import Notfound from './components/notfound';
@@ -24,11 +27,15 @@ const routes = [
 ];
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      {routes.map(route => <Route key={route.id} {...route} />)}
-    </Switch>
-  </BrowserRouter>
+  <Provider store={AppStore}>
+    <BrowserRouter>
+      <Switch>
+        {routes.map(route => <Route key={route.id} {...route} />)}
+      </Switch>
+    </BrowserRouter>
+  </Provider>
+
 );
+
 
 export default App;
