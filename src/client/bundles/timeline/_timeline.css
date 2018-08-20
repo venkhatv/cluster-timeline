@@ -1,6 +1,9 @@
 :root {
   --icon-unit: 50px;
   --color-red: #cc6666;
+  --color-blue: #99cccc;
+  --color-violet: #9999cc;
+  --color-green: #99cc99;
 }
 
 .timeline {
@@ -8,87 +11,177 @@
     background: #f4f5f6;
   }
 }
-
+.timelineComponent {
+  height: 360px;
+  margin: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: #f4f5f6;
+  border: 1px solid #d5dae0;
+  & .dummyDiv {
+    height: 50px;
+    width: auto;
+  }
+}
 .timelineItem {
   position: relative;
+  width: calc(var(--icon-unit) + var(--icon-unit) + 9px);
+  height: calc(var(--icon-unit) + var(--icon-unit) + var(--icon-unit));
+  display: inline-block;
+  &.timeline-bottom {
+    top: 35px;
+  }
+  &.timeline-bottom:last-child{
+    top:-15px
+  }
+  &.zIndexClass15 {
+    z-index: 15;
+  }
+  &.zIndexClass14 {
+    z-index: 14;
+  }
+  &.zIndexClass14 {
+    z-index: 13;
+  }
   & .childDiv {
     max-width: calc(var(--icon-unit) + var(--icon-unit));
+    position: relative;
+    left: 40px;
+    top: calc(0px - ((var(--icon-unit) / 2) + 10px));
+    border: grey 1px solid;
+    margin-bottom: 10px;
+    height: calc(var(--icon-unit) + var(--icon-unit) / 2);
+    &.timeline-bottom {
+      top: 10px;
+      margin-top: 10px;
+      margin-top: 0px;
+    }
   }
   & .connectLines {
+    height: 80px;
+    width: 103px;
+
     & .line {
-      background-color: var(--color-red);
       border-radius: 1.5px;
       display: inline-block;
       position: relative;
+      &.lineRed {
+        background-color: var(--color-red);
+      }
+      &.lineGreen {
+        background-color: var(--color-green);
+      }
+      &.lineViolet {
+        background-color: var(--color-violet);
+      }
+      &.lineBlue {
+        background-color: var(--color-blue);
+      }
+      
     }
     & .firstLine {
       border-top-left-radius: 1.5px;
       border-bottom-left-radius: 1.5px;
       height: 3px;
       width: var(--icon-unit);
+      &.timeline-bottom {
+        bottom: calc(var(--icon-unit) / 2 + 10px);
+      }
     }
     & .secondLine {
-      left: 1px;
-      background-color: inherit;
-      border: 3px solid var(--color-red);
-      width: calc(var(--icon-unit) + 10px);
-      height: calc(var(--icon-unit) + 10px);
-      border-top-left-radius: calc(
-        var(--icon-unit) + 10px + var(--icon-unit) + 10px
-      );
+      left: 0px;
+      background-color: inherit !important;
+      /* border: 3px solid var(--color-red); */
+      width: calc(var(--icon-unit) / 2 + 10px + 3px);
+      height: calc(var(--icon-unit) / 2 + 10px + 3px);
+      border-left-width: 3px;
+      border-left-style: solid;
+      border-top-width: 3px;
+      border-top-style: solid;
+      border-top-left-radius: calc(var(--icon-unit) + 10px + 10px);
+      &.lineRed {
+        border-color: var(--color-red);
+      }
+      &.lineGreen {
+        border-color: var(--color-green);
+      }
+      &.lineViolet {
+        border-color: var(--color-violet);
+      }
+      &.lineBlue {
+        border-color: var(--color-blue);
+      }
+      &.timeline-bottom {
+        width: calc(var(--icon-unit) / 2 + 10px + 3px);
+        height: calc(var(--icon-unit) / 2 + 10px + 3px);
+        border-top: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-left-radius: calc(var(--icon-unit) + 10px + 10px);
+      }
     }
     & .thirdLine {
-      left: 1px;
-      height: calc(var(--icon-unit));
+      left: 0px;
+      height: calc(var(--icon-unit) - 10px);
       width: 3px;
+      bottom: calc(var(--icon-unit) / 2 + 10px);
+      &.timeline-bottom {
+        top: calc(var(--icon-unit) / 2 + 10px + 2px);
+        bottom: 0px;
+      }
     }
     & .fourthLine {
       width: 10px;
       height: 10px;
-      /* position: absolute; */
-      /* top: 20px; */
-      background-color: var(--color-red);
-      /* right: 17px; */
       border-radius: 5px;
+      bottom: calc(var(--icon-unit) / 2 + 10px + var(--icon-unit) - 10px -1px);
+      left: -7px;
+      &.timeline-bottom {
+        bottom: 0px;
+        top: 46px;
+      }
     }
   }
   & .imageDiv {
     width: var(--icon-unit);
     height: var(--icon-unit);
-    /* position: absolute; */
-    /* bottom: 12px;
-        right: 12px; */
     background-repeat: no-repeat;
     background-size: cover;
+    left: calc(var(--icon-unit) + 10px);
+    bottom: calc(var(--icon-unit) + 20px);
+    background-color: white;
+    /* border: white 3px solid; */
+    position: relative;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    &.timeline-bottom {
+      top: calc(var(--icon-unit) / 2 + 5px);
+    }
   }
   & .subText {
     height: 40px;
     width: var(--icon-unit);
+    position: relative;
+    left: calc(var(--icon-unit) + 10px);
+    bottom: calc(var(--icon-unit));
+    &.timeline-bottom {
+      top: calc(var(--icon-unit) - 10px);
+    }
   }
 }
 
-.timeline-icon {
-  width: 50px;
-  height: 50px;
-  /* position: absolute;
-    bottom: 12px;
-    right: 12px; */
-  background-repeat: no-repeat;
-  background-size: cover;
-  &.Core {
-    background-image: url(../../../assets/images/common/Core.svg);
-  }
-  &.AHV {
-    background-image: url(../../../assets/images/common/AHV.svg);
-  }
-  &.Integrated {
-    background-image: url(../../../assets/images/common/Integrated.svg);
-  }
-  &.Blueprint {
-    background-image: url(../../../assets/images/common/Blueprint.svg);
-  }
+.Core {
+  background-image: url(../../../../assets/images/Core.svg);
 }
-
-:global .Core {
-  background-image: url(../../../assets/images/common/Core.svg);
+.AHV {
+  background-image: url(../../../../assets/images/AHV.svg);
+}
+.Integrated {
+  background-image: url(../../../../assets/images/Integrated.svg);
+}
+.Blueprint {
+  background-image: url(../../../../assets/images/Blueprint.svg);
 }

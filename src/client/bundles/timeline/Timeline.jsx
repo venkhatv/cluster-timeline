@@ -3,6 +3,7 @@ import styles from './_timeline.css';
 import PropTypes from 'prop-types';
 import { Card } from 'antd';
 import TimelineComponent from './TimelineComponent';
+import appStyles from './app.css';
 
 class Timeline extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class Timeline extends Component {
     return (
       <div>
         <div>{JSON.stringify(clusterData)}</div>
-        <TimelineComponent data-value={clusterData} />
+        <TimelineComponent clusterData={clusterData} />
       </div>
     );
   }
