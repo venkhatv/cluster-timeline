@@ -4,6 +4,8 @@
   --color-blue: #99cccc;
   --color-violet: #9999cc;
   --color-green: #99cc99;
+  --color-bg-gray: #f8f9fa;
+  
 }
 
 .timeline {
@@ -16,7 +18,7 @@
   margin: 40px;
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: #f4f5f6;
+  background-color: white;
   border: 1px solid #d5dae0;
   & .dummyDiv {
     height: 50px;
@@ -173,15 +175,15 @@
   }
 }
 
-.Core {
-  background-image: url(../../../../assets/images/Core.svg);
+.supportCase{
+  background-image: url(../../../../assets/images/support.png);
 }
-.AHV {
-  background-image: url(../../../../assets/images/AHV.svg);
+.dispatch {
+  background-image: url(../../../../assets/images/dispatch.png);
 }
-.Integrated {
-  background-image: url(../../../../assets/images/Integrated.svg);
+.hardware {
+  background-image: url(../../../../assets/images/hardwareChip.png);
 }
-.Blueprint {
-  background-image: url(../../../../assets/images/Blueprint.svg);
+.software {
+  background-image: url(../../../../assets/images/softwareRound.png);
 }

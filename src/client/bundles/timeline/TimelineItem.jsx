@@ -11,10 +11,10 @@ const colorMappings = {
 };
 
 const iconClassMappings = {
-  case: 'Core',
-  dispatch: 'AHV',
-  software: 'Integrated',
-  hardware: 'Blueprint',
+  case: 'supportCase',
+  dispatch: 'dispatch',
+  software: 'software',
+  hardware: 'hardware',
 };
 
 
