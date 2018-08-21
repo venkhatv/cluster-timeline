@@ -17,9 +17,19 @@ export const getClusterList = async (req, res, next) => {
 export const getClusterData = async (req, res, next) => {
   try {
     const { query } = req;
-    // if (!req.query.order) {
-    //   query = { ...query, order: [['order', 'ASC']] };
-    // }
+    const { id, blockId } = req.params;
+    const date = new Date();
+    date.setFullYear(date.getFullYear() - 1);
+    const where = {
+      date: {
+        $between: [date, new Date()],
+      },
+      clusterId: id,
+      blockId,
+    };
+    query.where = where;
+    query.order = [['date', 'ASC']];
+    console.log(query);
     const result = await db.ClusterData.findAll(query);
     res.json(result);
   } catch (err) {

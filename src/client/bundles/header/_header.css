@@ -1,0 +1,21 @@
+#header {
+  /* display: flex;
+  z-index: 11;
+  justify-content: space-around; */
+  width: 100%;
+
+  /* & .title { */
+    /* display: flex;
+    align-items: center;
+  } */
+}
+.logo {
+  /* width: 170px; */
+  /* height: 50px; */
+  margin:auto;
+  text-align: center;
+  color: #f4f5f6;
+  font-weight: 600;
+  /* background-image: url(../../../assets/images/common/Logo.svg); */
+  /* background-repeat: no-repeat; */
+}

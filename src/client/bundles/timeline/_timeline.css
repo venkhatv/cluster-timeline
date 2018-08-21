@@ -5,21 +5,39 @@
   --color-violet: #9999cc;
   --color-green: #99cc99;
   --color-bg-gray: #f8f9fa;
-  
 }
 
+.wrapperDiv {
+  /* position: absolute; */
+}
 .timeline {
   & .timeline-chart {
-    background: #f4f5f6;
+    /* background: #f4f5f6; */
+  }
+}
+
+.detailsDiv {
+  width: 70%;
+  color: white;
+  min-height: 500px;
+  opacity: 30%;
+  display: flex;
+  & .placeHolder {
+    align-items: center;
+    justify-content: center;
   }
 }
 .timelineComponent {
-  height: 360px;
-  margin: 40px;
+  height: 390px;
+  width: 1500px;
+  padding: 20px 40px;
+  /* height: 360px; */
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: white;
-  border: 1px solid #d5dae0;
+  background-color:rgba(0,0,0,0.4); /* darkslategray;*/
+  /* border: 1px solid #d5dae0; */
+  border-radius: 5px;
+  margin-top: 20px;
   & .dummyDiv {
     height: 50px;
     width: auto;
@@ -33,8 +51,8 @@
   &.timeline-bottom {
     top: 35px;
   }
-  &.timeline-bottom:last-child{
-    top:-15px
+  &.timeline-bottom:last-child {
+    top: -15px;
   }
   &.zIndexClass15 {
     z-index: 15;
@@ -50,9 +68,12 @@
     position: relative;
     left: 40px;
     top: calc(0px - ((var(--icon-unit) / 2) + 10px));
-    border: grey 1px solid;
+    /* border: grey 1px solid; */
     margin-bottom: 10px;
-    height: calc(var(--icon-unit) + var(--icon-unit) / 2);
+    max-height: calc(var(--icon-unit) + var(--icon-unit) / 2);
+    /* Dark backgound */
+    color: white;
+    font-weight: 500px;
     &.timeline-bottom {
       top: 10px;
       margin-top: 10px;
@@ -79,7 +100,6 @@
       &.lineBlue {
         background-color: var(--color-blue);
       }
-      
     }
     & .firstLine {
       border-top-left-radius: 1.5px;
@@ -166,6 +186,8 @@
   & .subText {
     height: 40px;
     width: var(--icon-unit);
+    FONT-WEIGHT: 700;
+    color: white;
     position: relative;
     left: calc(var(--icon-unit) + 10px);
     bottom: calc(var(--icon-unit));
@@ -175,7 +197,7 @@
   }
 }
 
-.supportCase{
+.supportCase {
   background-image: url(../../../../assets/images/support.png);
 }
 .dispatch {

@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,6 +14,9 @@ const exclude = /node_modules/;
 const JSDocPath = path.resolve(__dirname, 'jsdoc.conf.json');
 // const ElevatePortalAssetsPath = path.resolve(__dirname, 'assets');
 const PostcssLocalIdentName = '[name]---[local]---[hash:base64:5]';
+const lessToJs = require('less-vars-to-js');
+
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './assets/_ant-theme-vars.less'), 'utf8'));
 
 const commonPlugins = (environment) => {
   const isDev = environment === 'development';
@@ -181,7 +185,7 @@ module.exports = (environment) => {
               loader: 'css-loader',
             }, {
               loader: 'less-loader',
-              options: { javascriptEnabled: true },
+              options: { javascriptEnabled: true, modifyVars: themeVariables },
             }],
         }, {
           test: /\.html$/,

@@ -54,7 +54,7 @@ class TimelineComponent extends Component {
           {item.caseCount}
           {item.disptachCount}
         </div>
-      </TimelineItem>);
+              </TimelineItem>);
     });
 
     return (

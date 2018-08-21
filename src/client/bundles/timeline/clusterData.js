@@ -557,9 +557,9 @@ const clusterData = [{
 }, {
   clusterId: 'ABC',
   blockId: 'Block 123',
-  date: '01/07/2018',
+  date: '01/06/2018',
   year: 2018,
-  caseCount: 4,
+  caseCount: 1,
   caseData: [{
     subject: 'Not booting up',
     createdDate: '08/08/2017',
@@ -612,3 +612,92 @@ const clusterData = [{
 
 
 export default clusterData;
+
+
+export const detailData = {
+  clusterId: 'ABC',
+  blockId: 'Block 123',
+  date: '2018-02-01',
+  year: 2018,
+  caseCount: 4,
+  caseData: [{
+    'Case Number': 'A123245',
+    Subject: 'Not booting up',
+    Date: '2018-02-01',
+    Resolution: 'Power failure',
+  }, {
+    'Case Number': 'A123245',
+    Subject: 'Failing',
+    Date: '2018-02-01',
+    Resolution: 'Power failure',
+  }, {
+    'Case Number': 'A123245',
+    Subject: 'Not booting up',
+    Date: '2018-02-01',
+    Resolution: 'Power failure',
+  }, {
+    'Case Number': 'A123245',
+    Subject: 'Not booting up',
+    Date: '2018-02-01',
+    Resolution: 'Power failure',
+  }],
+  dispatchCount: 2,
+  dispatchData: [{
+    subject: 'Random dispatch',
+    createdDate: '2018-02-01',
+    description: 'some random disptach',
+  }, {
+    subject: 'Random dispatch 2',
+    createdDate: '2018-02-01',
+    description: 'some random disptach 2',
+  }],
+  softwareItems: [
+    {
+      Date: '2018-02-01',
+      items: [
+        'Software 1',
+        'Software 2',
+        'Software 3.4.5 Software 5.6.7',
+      ],
+    }, {
+      Date: '2018-02-01',
+      items: [
+        'Software 3',
+        'Software 4',
+        'Software 3.4.5 Software 5.6.7',
+      ],
+    },
+  ],
+  softwareDetails: [{
+    Name: 'Nic',
+    ReleaseVersion: '5.4.0',
+    InstalledDate: '2018-02-01',
+  }, {
+    Feature: 'Async Dr',
+    Activity: 'Enabled',
+    Date: '2018-02-01',
+  }],
+  hardwareItems: [
+    {
+      Date: '2018-02-01',
+      items: [
+        'Hardware 1',
+        'Hardware 2',
+        'Hardware 3.4.5 Hardware 5.6.7',
+      ],
+    }, {
+      Date: '2018-02-01',
+      items: [
+        'Hardware 1',
+        'Hardware 2',
+        'Hardware 3.4.5 Hardware 5.6.7',
+      ],
+    },
+  ],
+  hardwareDetails: [{
+    OSversion: 'AOS 5.4',
+    issue: 'Boom',
+    resolution: 'Resolved',
+  }],
+
+};

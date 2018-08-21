@@ -1,0 +1,30 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row > div {
+  margin: 5px 0px;
+  
+}
+
+
+.itemName {
+  width: 70%;
+}
+
+.cardBody {
+  height: 292px;
+}
+
+.cardContainer {
+  margin-top: 30px;
+}
+
+:global .ant-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+  color: white;
+  border-radius: 5px;
+}
