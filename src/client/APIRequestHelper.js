@@ -55,6 +55,15 @@ const APIRequestHelper = {
       LE.log('Api failed:', url, e);
       return null;
     }),
+  getRequestWithCatch: ({
+    url,
+    body,
+    config,
+  }) =>
+    Axios.get(url, body, config).catch((e) => {
+      LE.log('Api failed:', url, e);
+      return null;
+    }),
 };
 
 export default APIRequestHelper;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card } from 'antd';
 import TimelineItem from './TimelineItem';
 import moment from 'moment';
-import clusterData from './clusterData';
+
 
 const colorMappings = {
   case: 'red',
@@ -13,19 +13,19 @@ const colorMappings = {
   hardware: 'green',
 };
 function getColorAndType(clusterData) {
-  let type;
-  const {
-    caseCount, dispatchCount, softwareItems = [], hardwareItems = [],
-  } = clusterData;
-  if (softwareItems.length === 0 && hardwareItems.length === 0) {
-    type = caseCount > dispatchCount ? 'case' : 'dispatch';
-    return { type, color: colorMappings[type] };
-  }
-  if (softwareItems.length > hardwareItems.length) {
-    type = 'software';
-    return { type, color: colorMappings[type] };
-  }
-  type = 'hardware';
+  // let type;
+  // const {
+  //   caseCount, dispatchCount, softwareItems = [], hardwareItems = [],
+  // } = clusterData;
+  // if (softwareItems.length === 0 && hardwareItems.length === 0) {
+  //   type = caseCount > dispatchCount ? 'case' : 'dispatch';
+  //   return { type, color: colorMappings[type] };
+  // }
+  // if (softwareItems.length > hardwareItems.length) {
+  //   type = 'software';
+  //   return { type, color: colorMappings[type] };
+  // }
+  const type = 'hardware';
   return { type, color: colorMappings[type] };
 }
 
@@ -34,7 +34,7 @@ class TimelineComponent extends Component {
     // this.props.actions.fetchDetails();
   }
   render() {
-    // const { clusterData } = this.props;
+    const { clusterData } = this.props;
 
     const renderElt = clusterData.map((item, index) => {
       const { type, color } = getColorAndType(item);
@@ -49,12 +49,12 @@ class TimelineComponent extends Component {
         index={index}
       >
         <div className={styles.contentDiv}>
-          {item.softwareItems}
-          {item.hardwareItems}
-          {item.caseCount}
-          {item.disptachCount}
+          <div dangerouslySetInnerHTML={{ __html: (item.softwareItems && item.softwareItems.replace(/\n|\r\n/gi, '<br />')) || '' }} />
+          <div dangerouslySetInnerHTML={{ __html: (item.hardwareItems && item.softwareItems.replace(/\n|\r\n/gi, '<br />')) || '' }} />
+          <div> Case Count: {item.caseCount || 0} </div>
+          <div> Dispatch Count: {item.dispatchCount || 0} </div>
         </div>
-              </TimelineItem>);
+      </TimelineItem>);
     });
 
     return (

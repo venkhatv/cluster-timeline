@@ -15,6 +15,11 @@ const routes = [{
     method: 'get',
     controller: getClusterList,
     policies: [],
+  }, {
+    url: '',
+    method: 'get',
+    controller: getClusterList,
+    policies: [],
   }],
 }, {
   url: '/cluster',

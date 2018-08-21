@@ -2,10 +2,12 @@ import db from '../dbmodels';
 
 export const getClusterList = async (req, res, next) => {
   try {
-    const { query } = req;
+    const { query = {} } = req;
     // if (!req.query.order) {
     //   query = { ...query, order: [['order', 'ASC']] };
     // }
+
+    query.limit = 200;
     const result = await db.ClusterList.findAll(query);
     res.json(result);
   } catch (err) {
