@@ -105,7 +105,7 @@ class TimelineComponent extends Component {
       >
         <Tooltip placement="right" title={toolDiv}>
           <div className={styles.contentDiv}>
-
+            {/* <div className={styles.contentInnerDiv}> */}
             { newArr ? newArr.map(val => <div className={styles.childDivElt}>{val}</div>) : '' }
 
             {/* <div dangerouslySetInnerHTML={{ __html: (item.softwareItems && item.softwareItems.replace(/\n|\r\n/gi, '<br />')) || '' }} />
@@ -113,6 +113,7 @@ class TimelineComponent extends Component {
             { item.caseCount > 0 ? <div className={styles.childDivElt}> Case Count: {item.caseCount || 0} </div> : null }
             {item.dispatchCount > 0 ? <div className={styles.childDivElt}> Dispatch Count: {item.dispatchCount || 0} </div> : null }
           </div>
+          {/* </div> */}
         </Tooltip>
               </TimelineItem>);
     });

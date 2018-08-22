@@ -58,6 +58,9 @@
   bottom: 15px;
   &.timeline-bottom {
     top: 35px;
+    & .contentDiv{
+      top: 0;
+    }
   }
   &.zIndexClass15 {
     z-index: 15;
@@ -72,7 +75,7 @@
     max-width: calc(var(--icon-unit) + var(--icon-unit));
     position: relative;
     left: 40px;
-    top: calc(0px - ((var(--icon-unit) / 2) + 10px));
+    top: calc(0px - ((var(--icon-unit) / 2) + 10px + 5px));
     /* border: grey 1px solid; */
     margin-bottom: 10px;
     font-size: 13px;
@@ -86,6 +89,10 @@
     overflow: hidden;
     z-index: 10;
     /* white-space: nowrap; */
+    & .contentDiv{
+      position: absolute;
+      bottom: 0;
+    }
     & .childDivElt{
       width: 98px;
       text-overflow: ellipsis;
