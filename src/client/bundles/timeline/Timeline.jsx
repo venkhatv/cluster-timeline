@@ -102,7 +102,7 @@ class Timeline extends Component {
               onChange={(e) => { this.blockChange(e); }}
               style={{ width: 300 }}
             >
-              {blockIds.map(val => <Option value={val}>{val}</Option>)}
+              {blockIds.slice(0, 15).map(val => <Option value={val}>{val}</Option>)}
             </Select>
            </div>) : null
         }
