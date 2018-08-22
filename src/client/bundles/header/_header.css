@@ -5,17 +5,28 @@
   width: 100%;
 
   /* & .title { */
-    /* display: flex;
+  /* display: flex;
     align-items: center;
   } */
 }
 .logo {
-  /* width: 170px; */
-  /* height: 50px; */
-  margin:auto;
+  width: 350px;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  color: black;
+  background-image: url(../../../../assets/images/universalGreen.jpg);
+  /* background-image: url(../../../../assets/images/timelineCircle.png); */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* //for text */
+/* .logo {
+  width: 170px;
+  height: 50px;
+  margin: auto;
   text-align: center;
   color: #f4f5f6;
   font-weight: 600;
-  /* background-image: url(../../../assets/images/common/Logo.svg); */
-  /* background-repeat: no-repeat; */
-}
+} */

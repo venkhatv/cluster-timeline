@@ -11,7 +11,8 @@ import styles from './_header.css';
  */
 const Header = props => (
   <header id={styles.header}>
-    <h1 className={styles.logo}>UNIVERSAL TIMELINE</h1>
+    <div className={styles.logo} />
+    {/* <h1 className={styles.logo}> UNIVERSAL TIMELINE</h1> */}
   </header >
 );
 

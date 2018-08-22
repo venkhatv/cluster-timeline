@@ -7,6 +7,7 @@ import styles from './_cards.css';
 import SoftwareCard from './SoftwareCard';
 import HardwareCard from './HardwareCard';
 import CaseDispatchCard from './CaseDispatchCard';
+import moment from 'moment';
 
 import { detailData } from '../clusterData';
 
@@ -23,9 +24,15 @@ class Cards extends Component {
     if (clusterData === null) {
       clusterData = {};
     }
+    let subText;
+    if (!empty && clusterData.date) {
+      const dateObj = new moment(clusterData.date, 'YYYY-MM-DD');
+      subText = dateObj.format("MMM' YY");
+    }
     // const clusterData = detailData;
     return (
       <div className={styles.cardContainer}>
+        { !empty ? <div ><h1 className={styles.banner}> {subText} Activity </h1></div> : null}
         <Row gutter={16} style={{ marginBottom: 20 }}>
           <Col xs={24} sm={24} md={12} lg={6} xl={6}>
             <SoftwareCard data={clusterData.softwareItems} empty={empty} />

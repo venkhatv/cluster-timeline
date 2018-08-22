@@ -1,9 +1,9 @@
 :root {
   --icon-unit: 50px;
-  --color-red: #cc6666;
-  --color-blue: #99cccc;
+  --color-red: #fa8e62;
+  --color-blue: #51d2f3;
   --color-violet: #9999cc;
-  --color-green: #99cc99;
+  --color-green: #53e994;
   --color-bg-gray: #f8f9fa;
 }
 
@@ -15,12 +15,12 @@
     /* background: #f4f5f6; */
   }
 }
-.inputLabel{
-    width: 120px;
-    display: inline-block;
-    /* color: whitesmoke; */
-    font-size: 16px;
-    font-weight: 500;
+.inputLabel {
+  width: 120px;
+  display: inline-block;
+  /* color: whitesmoke; */
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .detailsDiv {
@@ -41,7 +41,7 @@
   /* height: 360px; */
   overflow-x: auto;
   overflow-y: hidden;
-  background-color:rgba(0,0,0,0.4); /* darkslategray;*/
+  background-color: rgba(0, 0, 0, 0.4); /* darkslategray;*/
   /* border: 1px solid #d5dae0; */
   border-radius: 5px;
   margin-top: 20px;
@@ -58,7 +58,7 @@
   bottom: 15px;
   &.timeline-bottom {
     top: 35px;
-    & .contentDiv{
+    & .contentDiv {
       top: 0;
     }
   }
@@ -81,7 +81,7 @@
     font-size: 13px;
     font-weight: 500;
     /* max-height: calc(var(--icon-unit) + var(--icon-unit) / 2); */
-    height:calc(var(--icon-unit) + var(--icon-unit) / 2);
+    height: calc(var(--icon-unit) + var(--icon-unit) / 2);
     /* Dark backgound */
     color: white;
     font-weight: 500px;
@@ -89,11 +89,11 @@
     overflow: hidden;
     z-index: 10;
     /* white-space: nowrap; */
-    & .contentDiv{
+    & .contentDiv {
       position: absolute;
       bottom: 0;
     }
-    & .childDivElt{
+    & .childDivElt {
       width: 98px;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -114,6 +114,7 @@
       border-radius: 1.5px;
       display: inline-block;
       position: relative;
+    
       &.lineRed {
         background-color: var(--color-red);
       }
@@ -199,14 +200,14 @@
     left: calc(var(--icon-unit) + 10px);
     bottom: calc(var(--icon-unit) + 20px);
     background-color: white;
-    cursor:pointer;
+    cursor: pointer;
     /* border: white 3px solid; */
     position: relative;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    &.noPointer{
+    &.noPointer {
       cursor: default;
     }
     &.timeline-bottom {
@@ -216,9 +217,9 @@
   & .subText {
     height: 40px;
     width: var(--icon-unit);
-    FONT-WEIGHT: 700;
+    font-weight: 700;
     text-align: center;
-    color: white;
+    color: chartreuse;
     position: relative;
     left: calc(var(--icon-unit) + 10px);
     bottom: calc(var(--icon-unit));
@@ -230,22 +231,22 @@
 }
 
 .supportCase {
-  background-image: url(../../../../assets/images/support.png);
+  background-image: url(../../../../assets/images/supportCaseOrange.svg);
 }
 .dispatch {
-  background-image: url(../../../../assets/images/support.png);
+  background-image: url(../../../../assets/images/supportCaseOrange.svg);
   /* background-image: url(../../../../assets/images/dispatch.png); */
 }
 .hardware {
   background-image: url(../../../../assets/images/hardwareChip.png);
+  /* background-image: url(../../../../assets/images/hardwareChip.png); */
 }
 .software {
-  background-image: url(../../../../assets/images/softwareRound.png);
+  background-image: url(../../../../assets/images/softwareBlue.png);
+  /* background-image: url(../../../../assets/images/softwareRound.png); */
 }
 
-
-.tooltipDiv{
-  & .toolDivElt{
-
+.tooltipDiv {
+  & .toolDivElt {
   }
 }

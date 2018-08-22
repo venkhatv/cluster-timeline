@@ -85,7 +85,7 @@
 }
 
 :global .ant-card-head-title {
-  font-weight: 700;
+  font-weight: 600;
 }
 :global body {
   font-family: NutanixSoft, sans-serif;

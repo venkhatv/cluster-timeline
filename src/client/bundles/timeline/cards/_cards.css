@@ -6,16 +6,14 @@
 
 .row > div {
   margin: 5px 0px;
-  
 }
-.row:nth-child(even){
+.row:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.caseDetailRow:nth-child(even){
+.caseDetailRow:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 .itemName {
   width: 70%;
@@ -35,4 +33,16 @@
   border-color: transparent;
   color: white;
   border-radius: 5px;
+}
+
+.banner {
+  height: 50px;
+  line-height: 50px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-bottom: 20px;
 }

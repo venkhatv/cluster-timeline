@@ -7,17 +7,17 @@ import timelineStyles from '../_timeline.css';
 import styles from './_cards.css';
 
 function getList(data) {
-  return data.map((item) => {
-    const dateObj = new moment(item.Date, 'YYYY-MM-DD');
-    const dateFormatted = dateObj.format("DD MMM'YY");
-    return (<li key={item.Id} className={styles.row}>
+  return data.map(item =>
+    // const dateObj = new moment(item.Date, 'YYYY-MM-DD');
+    // const dateFormatted = dateObj.format("DD MMM'YY");
+    (<li key={item.Id} className={styles.row}>
       <div className={styles.itemName}>
         {item.items.map(val => <div>{val}</div>)}
       </div>
-      <div>{dateFormatted}</div>
-            </li>
-    );
-  });
+      <div> {item.Date}</div>
+      {/* {dateFormatted} */}
+    </li>
+    ));
 }
 
 class SoftwareCard extends React.Component {
