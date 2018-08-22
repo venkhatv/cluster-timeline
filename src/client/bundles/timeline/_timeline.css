@@ -16,14 +16,17 @@
   }
 }
 .inputLabel {
-  width: 120px;
+  /* width: 120px; */
   display: inline-block;
   margin-top: 20px;
   /* color: whitesmoke; */
   font-size: 16px;
   font-weight: 500;
 }
-
+.dropbox{
+  display: inline-block;
+  margin-left: 20px;
+}
 .detailsDiv {
   width: 70%;
   color: white;

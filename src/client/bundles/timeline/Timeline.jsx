@@ -74,7 +74,8 @@ class Timeline extends Component {
     const blockIds = blockIdsObj ? blockIdsObj.blockIds.split(',') : [];
     return (
       <div>
-        <span className={styles.inputLabel}>Cluster UUID :</span>
+        {/* <div className={styles.dropbox}> */}
+        <span className={styles.inputLabel}>Cluster UUID :  </span>
         {/* <AutoComplete
           dataSource={this.props.data.filteredClusterArr}
           style={{ width: 300 }}
@@ -91,11 +92,9 @@ class Timeline extends Component {
         >
           {clusterArr.map(val => <Option value={val}>{val}</Option>)}
         </Select>
-
-        <br />
         {selectedClusterId ?
-          (<div>
-            <span className={styles.inputLabel}>Block ID :</span>
+          (<div className={styles.dropbox}>
+            <span className={styles.inputLabel}>Block ID :  </span>
             <Select
               defaultValue=""
               value={selectedBlockId || blockIds[0] || ''}

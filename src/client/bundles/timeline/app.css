@@ -83,7 +83,9 @@
 :global .ant-card-body {
   font-weight: 500px;
 }
-
+:global .ant-select {
+  margin-left: 10px;
+}
 :global .ant-card-head-title {
   font-weight: 600;
 }
