@@ -103,6 +103,7 @@ class Timeline extends Component {
             >
               {blockIds.slice(0, 15).map(val => <Option value={val}>{val}</Option>)}
             </Select>
+
            </div>) : null
         }
       </div>
