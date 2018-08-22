@@ -8,30 +8,45 @@ import moment from 'moment';
 
 const colorMappings = {
   case: 'red',
-  dispatch: 'violet',
+  dispatch: 'red',
   software: 'blue',
   hardware: 'green',
 };
 function getColorAndType(clusterData) {
   let type;
-  // const {
-  //   caseCount, dispatchCount,
-  // } = clusterData;
-  // let { softwareItems, hardwareItems } = clusterData;
-  // if (softwareItems === null || softwareItems === undefined) {
-  //   softwareItems = { items: [] };
-  // }
-  // if (hardwareItems === null || hardwareItems === undefined) {
-  //   hardwareItems = { items: [] };
-  // }
-  // if (softwareItems.items.length === 0 && hardwareItems.items.length === 0) {
-  //   type = caseCount > dispatchCount ? 'case' : 'dispatch';
-  //   return { type, color: colorMappings[type] };
-  // }
-  // if (softwareItems.items.length > hardwareItems.items.length) {
-  //   type = 'software';
-  //   return { type, color: colorMappings[type] };
-  // }
+  const {
+    caseCount = 0, dispatchCount = 0, softwareItems, hardwareItems,
+  } = clusterData;
+  let softwareItemsLength,
+    hardwareItemsLength;
+
+  if (softwareItems === null || softwareItems === undefined) {
+    softwareItemsLength = 0;
+  } else if (softwareItems) {
+    softwareItemsLength = softwareItems.length;
+  } else {
+    softwareItemsLength = 0;
+  }
+
+  if (hardwareItems === null || hardwareItems === undefined) {
+    hardwareItemsLength = 0;
+  } else if (hardwareItems) {
+    hardwareItemsLength = hardwareItems.length;
+  } else {
+    hardwareItemsLength = 0;
+  }
+
+  if (softwareItemsLength === 0 && hardwareItemsLength === 0) {
+    console.log('case or dispatch');
+    type = caseCount > dispatchCount ? 'case' : 'dispatch';
+    return { type, color: colorMappings[type] };
+  }
+  if (softwareItemsLength > hardwareItemsLength) {
+    console.log('software');
+    type = 'software';
+    return { type, color: colorMappings[type] };
+  }
+  console.log('hardware');
   type = 'hardware';
   return { type, color: colorMappings[type] };
 }
@@ -75,7 +90,7 @@ class TimelineComponent extends Component {
           <div dangerouslySetInnerHTML={{ __html: (item.hardwareItems && item.softwareItems.replace(/\n|\r\n/gi, '<br />')) || '' }} /> */}
         { item.caseCount > 0 ? <div className={styles.toolDivElt}> Case Count: {item.caseCount || 0} </div> : null }
         {item.dispatchCount > 0 ? <div className={styles.toolDivElt}> Dispatch Count: {item.dispatchCount || 0} </div> : null }
-      </div>);
+                       </div>);
 
 
       return (<TimelineItem
@@ -88,7 +103,7 @@ class TimelineComponent extends Component {
         index={index}
         clickHandler={clickHandler}
       >
-        <Tooltip placement="right" title="">
+        <Tooltip placement="right" title={toolDiv}>
           <div className={styles.contentDiv}>
 
             { newArr ? newArr.map(val => <div className={styles.childDivElt}>{val}</div>) : '' }
@@ -99,7 +114,7 @@ class TimelineComponent extends Component {
             {item.dispatchCount > 0 ? <div className={styles.childDivElt}> Dispatch Count: {item.dispatchCount || 0} </div> : null }
           </div>
         </Tooltip>
-      </TimelineItem>);
+              </TimelineItem>);
     });
 
     return (

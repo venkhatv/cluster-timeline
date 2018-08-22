@@ -17,7 +17,7 @@ function getList(data) {
         {item.Resolution} <br />
       </div>
       <div>{dateFormatted}</div>
-    </li>
+            </li>
     );
   });
 }
@@ -75,7 +75,7 @@ class CaseDispatchCard extends React.Component {
         // loading={props.data.loading}
       >
         <div className={appStyles.cardBody}>
-          <p dangerouslySetInnerHTML={{ __html: data }} />
+          <p className={styles.caseDetailRow} dangerouslySetInnerHTML={{ __html: data && data.replace(/\n|\r\n/gi, '<br />') }} />
           {/* <ul>
             {getList(data)}
           </ul> */}

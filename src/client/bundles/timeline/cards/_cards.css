@@ -8,6 +8,13 @@
   margin: 5px 0px;
   
 }
+.row:nth-child(even){
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.caseDetailRow:nth-child(even){
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 
 .itemName {

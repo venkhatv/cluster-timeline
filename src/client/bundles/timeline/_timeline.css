@@ -226,7 +226,8 @@
   background-image: url(../../../../assets/images/support.png);
 }
 .dispatch {
-  background-image: url(../../../../assets/images/dispatch.png);
+  background-image: url(../../../../assets/images/support.png);
+  /* background-image: url(../../../../assets/images/dispatch.png); */
 }
 .hardware {
   background-image: url(../../../../assets/images/hardwareChip.png);
