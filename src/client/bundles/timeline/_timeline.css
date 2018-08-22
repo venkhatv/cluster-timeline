@@ -15,6 +15,13 @@
     /* background: #f4f5f6; */
   }
 }
+.inputLabel{
+    width: 120px;
+    display: inline-block;
+    /* color: whitesmoke; */
+    font-size: 16px;
+    font-weight: 500;
+}
 
 .detailsDiv {
   width: 70%;
@@ -49,7 +56,8 @@
   height: calc(var(--icon-unit) + var(--icon-unit) + var(--icon-unit));
   display: inline-block;
   &.timeline-bottom {
-    top: 35px;
+    /* top: 35px; */
+    top: -25px;
   }
   &.timeline-bottom:last-child {
     top: -15px;
@@ -64,19 +72,29 @@
     z-index: 13;
   }
   & .childDiv {
-    max-width: calc(var(--icon-unit) + var(--icon-unit)+ 10px);
+    max-width: calc(var(--icon-unit) + var(--icon-unit));
     position: relative;
     left: 40px;
     top: calc(0px - ((var(--icon-unit) / 2) + 10px));
     /* border: grey 1px solid; */
     margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
     max-height: calc(var(--icon-unit) + var(--icon-unit) / 2);
     /* Dark backgound */
     color: white;
     font-weight: 500px;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    z-index: 10;
+    /* white-space: nowrap; */
+    & .childDivElt{
+      width: 98px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+    }
     &.timeline-bottom {
       top: 10px;
       margin-top: 10px;
@@ -176,12 +194,16 @@
     left: calc(var(--icon-unit) + 10px);
     bottom: calc(var(--icon-unit) + 20px);
     background-color: white;
+    cursor:pointer;
     /* border: white 3px solid; */
     position: relative;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    &.noPointer{
+      cursor: default;
+    }
     &.timeline-bottom {
       top: calc(var(--icon-unit) / 2 + 5px);
     }
@@ -190,12 +212,14 @@
     height: 40px;
     width: var(--icon-unit);
     FONT-WEIGHT: 700;
+    text-align: center;
     color: white;
     position: relative;
     left: calc(var(--icon-unit) + 10px);
     bottom: calc(var(--icon-unit));
     &.timeline-bottom {
-      top: calc(var(--icon-unit) - 10px);
+      /* top: calc(var(--icon-unit) - 10px); */
+      top: 30px;
     }
   }
 }
@@ -211,4 +235,11 @@
 }
 .software {
   background-image: url(../../../../assets/images/softwareRound.png);
+}
+
+
+.tooltipDiv{
+  & .toolDivElt{
+
+  }
 }

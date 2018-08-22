@@ -8,14 +8,14 @@ import styles from './_cards.css';
 
 function getList(data) {
   return data.map((item) => {
-    const dateObj = new moment(item.date, 'YYYY-MM-DD');
+    const dateObj = new moment(item.Date, 'YYYY-MM-DD');
     const dateFormatted = dateObj.format("DD MMM'YY");
     return (<li key={item.Id} className={styles.row}>
       <div className={styles.itemName}>
         {item.items.map(val => <div>{val}</div>)}
       </div>
       <div>{dateFormatted}</div>
-            </li>
+    </li>
     );
   });
 }
@@ -28,9 +28,38 @@ class HardwareCard extends React.Component {
 
   render() {
     const {
-      data,
+      data, empty,
     } = this.props;
-
+    if (empty) {
+      return (
+        <Card
+          bordered={false}
+          title={
+            <div>
+              Hardware Changes
+            </div>}
+          hoverable
+          // loading={props.data.loading}
+        >
+        No month Chosen
+        </Card>
+      );
+    }
+    if (!data) {
+      return (
+        <Card
+          bordered={false}
+          title={
+            <div>
+              Hardware Changes
+            </div>}
+          hoverable
+          // loading={props.data.loading}
+        >
+        No changes
+        </Card>
+      );
+    }
     return (
       <Card
         bordered={false}

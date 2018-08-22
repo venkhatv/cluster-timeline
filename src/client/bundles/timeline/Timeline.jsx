@@ -13,7 +13,7 @@ class Timeline extends Component {
   componentDidMount() {
     this.props.actions.fetchListDetails();
   }
-  onSelect(value) {
+  clusterChange(value) {
     const { selectedClusterId, selectedBlockId, clusterList } = this.props.data;
     const blockIdsObj = clusterList.find(item => item.clusterId === value);
     const blockIds = blockIdsObj ? blockIdsObj.blockIds.split(',') : [];
@@ -27,6 +27,23 @@ class Timeline extends Component {
       selectedBlockId: value,
     });
   }
+
+  clickHandler(date) {
+    const data = this.props.clusterDataArr.find(item => item.date === date);
+
+    if (data.softwareItems === null && data.caseData === null && data.hardwareItems === null) {
+      // do ntorhing
+    } else {
+      this.props.actions.setState({
+        selectedMonthData: data,
+      });
+    }
+  }
+  // clusterChange(value) {
+  //   this.props.actions.setState({
+  //     selectedClusterId: value,
+  //   });
+  // }
   componentDidUpdate(prevProps) {
     // const id = '00054b37-9065-8d92-28f3-246e96351668';
     // const blockId = 'B8150H2';
@@ -50,24 +67,35 @@ class Timeline extends Component {
   }
 
   getInputBox() {
-    const { selectedClusterId, selectedBlockId, clusterList } = this.props.data;
+    const {
+      selectedClusterId, selectedBlockId, clusterList, clusterArr,
+    } = this.props.data;
     const blockIdsObj = clusterList.find(item => item.clusterId === selectedClusterId);
     const blockIds = blockIdsObj ? blockIdsObj.blockIds.split(',') : [];
     return (
       <div>
-        <span>Enter a Cluster Id</span>
-        <AutoComplete
+        <span className={styles.inputLabel}>Cluster UUID :</span>
+        {/* <AutoComplete
           dataSource={this.props.data.filteredClusterArr}
-          style={{ width: 200 }}
+          style={{ width: 300 }}
           onSelect={(e) => { this.onSelect(e); }}
           value={selectedClusterId || ''}
           onSearch={(e) => { this.handleSearch(e); }}
           placeholder="Choose a cluster Id"
-        />
+        /> */}
+        <Select
+          defaultValue=""
+          value={selectedClusterId || ''} // selectedClusterId || clusterArr[0]
+          onSelect={(e) => { this.clusterChange(e); }}
+          style={{ width: 300 }}
+        >
+          {clusterArr.map(val => <Option value={val}>{val}</Option>)}
+        </Select>
+
         <br />
         {selectedClusterId ?
           (<div>
-            <span className={styles.inputLabel}>Choose a Block Id :</span>
+            <span className={styles.inputLabel}>Block ID :</span>
             <Select
               defaultValue=""
               value={selectedBlockId || blockIds[0] || ''}
@@ -76,7 +104,7 @@ class Timeline extends Component {
             >
               {blockIds.map(val => <Option value={val}>{val}</Option>)}
             </Select>
-          </div>) : null
+           </div>) : null
         }
       </div>
     );
@@ -86,7 +114,7 @@ class Timeline extends Component {
     return (
       <div className={styles.wrapperDiv}>
         {this.getInputBox()}
-        <TimelineComponent clusterData={clusterDataArr} />
+        <TimelineComponent clusterData={clusterDataArr} clickHandler={(e) => { this.clickHandler(e); }} />
         <Cards clusterData={selectedMonthData} />
         {/* <div className={styles.detailsDiv}>
           <h1 className={styles.placeHolder}>Please choose a month to see detailed activity</h1>

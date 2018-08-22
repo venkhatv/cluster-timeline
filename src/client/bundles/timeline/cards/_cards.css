@@ -15,7 +15,8 @@
 }
 
 .cardBody {
-  height: 292px;
+  min-height: 292px;
+  max-width: 400px;
 }
 
 .cardContainer {

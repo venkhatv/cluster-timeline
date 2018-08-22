@@ -15,13 +15,20 @@ class Cards extends Component {
     // this.props.actions.fetchDetails();
   }
   render() {
-    // const { clusterData } = this.props;
-    const clusterData = detailData;
+    let empty;
+    if (!this.props.clusterData) {
+      empty = true;
+    }
+    let { clusterData } = this.props;
+    if (clusterData === null) {
+      clusterData = {};
+    }
+    // const clusterData = detailData;
     return (
       <div className={styles.cardContainer}>
         <Row gutter={16} style={{ marginBottom: 20 }}>
           <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-            <SoftwareCard data={clusterData.softwareItems} />
+            <SoftwareCard data={clusterData.softwareItems} empty={empty} />
           </Col>
           <Col
             xs={24}
@@ -30,7 +37,7 @@ class Cards extends Component {
             lg={6}
             xl={6}
           >
-            <HardwareCard data={clusterData.hardwareItems} />
+            <HardwareCard data={clusterData.hardwareItems} empty={empty} />
 
           </Col>
           <Col
@@ -40,7 +47,7 @@ class Cards extends Component {
             lg={12}
             xl={12}
           >
-            <CaseDispatchCard caseData={clusterData.caseData} dispatchData={clusterData.caseData} />
+            <CaseDispatchCard caseData={clusterData.caseData} dispatchData={clusterData.caseData} empty={empty} />
           </Col>
         </Row>
       </div>
