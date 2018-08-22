@@ -23,7 +23,7 @@ class TimelineItem extends Component {
     // this.props.actions.fetchDetails();
   }
   handleClick(e) {
-    this.clickHandler(this.props.date);
+    this.props.clickHandler(this.props.date);
   }
   render() {
     const {
@@ -45,7 +45,10 @@ class TimelineItem extends Component {
           <span className={`${styles.line} ${styles[colorClass]} ${styles.thirdLine} ${styles[positionClass]}`} />
           <span className={`${styles.line} ${styles[colorClass]} ${styles.fourthLine} ${styles[positionClass]}`} />
         </div>
-        <div className={`${styles.imageDiv} ${styles[iconClass]} ${styles[positionClass]}`} />
+        { noPointer ?
+          <div className={`${styles.imageDiv} ${styles[iconClass]} ${styles[positionClass]} ${styles[noPointerCls]}`} onClick={(e) => { this.handleClick(e); }} />
+          : <div className={`${styles.imageDiv} ${styles[iconClass]} ${styles[positionClass]}`} onClick={(e) => { this.handleClick(e); }} /> }
+
         <div className={`${styles.subText} ${styles[positionClass]}`} >{subText}</div>
       </div>
     ) : (

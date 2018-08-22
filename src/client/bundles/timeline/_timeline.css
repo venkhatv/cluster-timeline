@@ -55,12 +55,9 @@
   width: calc(var(--icon-unit) + var(--icon-unit) + 9px);
   height: calc(var(--icon-unit) + var(--icon-unit) + var(--icon-unit));
   display: inline-block;
+  bottom: 15px;
   &.timeline-bottom {
-    /* top: 35px; */
-    top: -25px;
-  }
-  &.timeline-bottom:last-child {
-    top: -15px;
+    top: 35px;
   }
   &.zIndexClass15 {
     z-index: 15;
@@ -80,7 +77,8 @@
     margin-bottom: 10px;
     font-size: 13px;
     font-weight: 500;
-    max-height: calc(var(--icon-unit) + var(--icon-unit) / 2);
+    /* max-height: calc(var(--icon-unit) + var(--icon-unit) / 2); */
+    height:calc(var(--icon-unit) + var(--icon-unit) / 2);
     /* Dark backgound */
     color: white;
     font-weight: 500px;

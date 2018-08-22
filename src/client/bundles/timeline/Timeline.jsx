@@ -29,7 +29,7 @@ class Timeline extends Component {
   }
 
   clickHandler(date) {
-    const data = this.props.clusterDataArr.find(item => item.date === date);
+    const data = this.props.data.clusterDataArr.find(item => item.date === date);
 
     if (data.softwareItems === null && data.caseData === null && data.hardwareItems === null) {
       // do ntorhing

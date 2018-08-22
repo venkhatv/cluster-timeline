@@ -14,24 +14,24 @@ const colorMappings = {
 };
 function getColorAndType(clusterData) {
   let type;
-  const {
-    caseCount, dispatchCount,
-  } = clusterData;
-  let { softwareItems, hardwareItems } = clusterData;
-  if (softwareItems === null || softwareItems === undefined) {
-    softwareItems = { items: [] };
-  }
-  if (hardwareItems === null || hardwareItems === undefined) {
-    hardwareItems = { items: [] };
-  }
-  if (softwareItems.items.length === 0 && hardwareItems.items.length === 0) {
-    type = caseCount > dispatchCount ? 'case' : 'dispatch';
-    return { type, color: colorMappings[type] };
-  }
-  if (softwareItems.items.length > hardwareItems.items.length) {
-    type = 'software';
-    return { type, color: colorMappings[type] };
-  }
+  // const {
+  //   caseCount, dispatchCount,
+  // } = clusterData;
+  // let { softwareItems, hardwareItems } = clusterData;
+  // if (softwareItems === null || softwareItems === undefined) {
+  //   softwareItems = { items: [] };
+  // }
+  // if (hardwareItems === null || hardwareItems === undefined) {
+  //   hardwareItems = { items: [] };
+  // }
+  // if (softwareItems.items.length === 0 && hardwareItems.items.length === 0) {
+  //   type = caseCount > dispatchCount ? 'case' : 'dispatch';
+  //   return { type, color: colorMappings[type] };
+  // }
+  // if (softwareItems.items.length > hardwareItems.items.length) {
+  //   type = 'software';
+  //   return { type, color: colorMappings[type] };
+  // }
   type = 'hardware';
   return { type, color: colorMappings[type] };
 }
