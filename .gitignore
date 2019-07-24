@@ -33,3 +33,4 @@ apidoc/
 npm-shrinkwrap\.json
 
 uploads/
+.env
