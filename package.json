@@ -18,7 +18,7 @@
   "dependencies": {
     "antd": "^3.3.3",
     "axios": "^0.18.1",
-    "connect-pg-simple": "^4.2.1",
+    "connect-pg-simple": "^6.0.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-es6-template-engine": "^2.0.4",
